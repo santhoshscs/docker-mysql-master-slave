@@ -74,3 +74,10 @@ docker exec -it mysql_master bash
 ```
 docker exec -it mysql_slave bash
 ```
+#### View binlog from master
+```
+docker exec -it mysql_master mysqlbinlog -v --base64-output=DECODE-ROWS /var/log/mysql/mysql-bin.000001
+```
+
+#### start master and slave
+`docker-compose up -d`
